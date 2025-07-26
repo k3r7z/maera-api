@@ -1,0 +1,5 @@
+services:
+  java-backend:
+    container_name: java-backend
+    build:
+      context: ./docker/backend
