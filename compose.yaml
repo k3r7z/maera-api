@@ -2,9 +2,10 @@ services:
   backend:
     container_name: backend
     build:
-      context: ./docker/backend
+      context: .
+      dockerfile: docker/backend/Dockerfile
     expose:
-      - 8080:8080
+      - "8080:8080"
     depends_on:
       - database
     networks:
@@ -17,7 +18,7 @@ services:
     volumes:
       - dbdata:/var/lib/postgresql/data
     expose:
-      - 5432:5432
+      - "5432:5432"
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USERNAME}
