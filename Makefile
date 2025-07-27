@@ -10,7 +10,7 @@ restart: ## Restart the containers
 	$(MAKE) stop && $(MAKE) run
 
 build: ## Rebuilds all the containers
-	docker compose stop && docker compose build
+	docker compose stop && docker compose build && docker compose up -d
 
 ssh-be: ## ssh's into the be container
 	docker exec -it backend bash
